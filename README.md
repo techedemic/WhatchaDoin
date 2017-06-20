@@ -70,5 +70,7 @@ user@computer:~/Electron $ ./
 The file containing the time entries will be `/home/user/Electron/output.csv`
 If it doesn't exist at first, the app will create it.
 
+Obviously, you want this app to open up regularly, so you can use something like the `cron` to schedule recurring tasks and make the app fire every, let's say, 30 minutes or so.
+
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
