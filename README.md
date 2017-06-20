@@ -14,18 +14,18 @@ First, download the appropriate version of [Electron](https://github.com/electro
 
 ## Windows
 
-# First, download Electron
+#### First, download Electron
 
 [Windows 64-Bit](https://github.com/electron/electron/releases/download/v1.6.11/electron-v1.6.11-win32-x64.zip)
 
-# Next, extract
+#### Next, extract
 Extract Electron in the directory of your choice. For this example, we will use `D:\Electron`
 
 After extracting the zip, navigate to `D:\Electron\resources` using the command prompt (`cmd`)
 
 ```dos
-D:
-cd D:\Electron\resources
+C:\Users\User\> D:
+D:\> cd D:\Electron\resources
 ```
 
 Clone the repository into the App directory
