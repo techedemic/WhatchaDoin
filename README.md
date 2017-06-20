@@ -4,7 +4,7 @@
 
 This is a very basic time tracker based on Dewald de Jongh's orignal Perl QT version, which unfortunately only worked on Linux.
 
-This one should be cross platform
+This version is cross-platform.
 
 ## To Use
 
