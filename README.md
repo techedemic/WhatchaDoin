@@ -6,36 +6,21 @@ This is a very basic time tracker based on Dewald de Jongh's orignal Perl QT ver
 
 This version is cross-platform.
 
-## To Use
+## Windows (64-Bit Only - 32 Bit available on request)
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer.
+#### First, download the app
 
-You will also need [Electron](https://github.com/electron/electron/releases). This is a NodeJS framework that allows you to write cross platform applications using HTML, CSS and JavaScript.
-
-## Windows
-
-#### First, download Electron
-
-[Windows 64-Bit](https://github.com/electron/electron/releases/download/v1.6.11/electron-v1.6.11-win32-x64.zip)
+Download the latest WINDOWS 64-BIIT release from https://github.com/techedemic/WhatchaDoin/releases .
 
 #### Next, extract
-Extract Electron in the directory of your choice. For this example, we will use `D:\Electron`
+Extract wherever you want. For this example, we will use `C:\tmp\WhatchaDoin`
 
-After extracting the zip, navigate to `D:\Electron\resources` using the command prompt (`cmd`)
+After extracting the zip, navigate to `C:\tmp\WhatchaDoin`
 
-```dos
-C:\Users\User\> D:
-D:\> cd D:\Electron\resources
-```
 
-Clone the repository into the App sub-directory
-```dos
-git clone https://github.com/techedemic/WhatchaDoin.git App
-```
+You can now manually start the app by running `C:\tmp\WhatchaDoin\WhatchaDoin.exe`
 
-You can now manually start the app by running `D:\Electron\electron.exe`
-
-The file containing the time entries will be `D:\Electron\output.csv`
+The file containing the time entries will be `C:\tmp\WhatchaDoin\output.csv`
 
 If it doesn't exist at first, the app will create it.
 
@@ -44,7 +29,7 @@ Obviously, you want this app to open up regularly, so you can use something like
 
 ## Linux
 
-#### First, download Electron
+#### First, download the app
 
 Download the latest LINUX release from https://github.com/techedemic/WhatchaDoin/releases .
 It will be the file that ends in `tgz`
