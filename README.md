@@ -46,31 +46,38 @@ Obviously, you want this app to open up regularly, so you can use something like
 
 #### First, download Electron
 
-For [Linux 64-Bit](https://github.com/electron/electron/releases/download/v1.6.11/electron-v1.6.11-linux-x64.zip)
+Download the latest LINUX release from https://github.com/techedemic/WhatchaDoin/releases .
+It will be the file that ends in `tgz`
+Remember, this will only work on 64-bit machines.
 
 #### Unzip to directory of your choice.
-We will use `/home/user/Electron` for this example
+We will use `/home/user/WhatchaDoin` for this example, where `user` is your home directory or username.
 From your command line:
 
 ```bash
 # Go to the home directory
 user@computer:/ $ cd /home/user
-# Get Electron
-user@computer:~ $ wget https://github.com/electron/electron/releases/download/v1.6.11/electron-v1.6.11-linux-x64.zip
+# Get Electron the latest version of the file from  (change the version if different)
+user@computer:~ $ wget https://github.com/techedemic/WhatchaDoin/releases/download/0.0.1/whatchadoin-0.0.1.tgz
 # Unzip to /home/user/Electron
-user@computer:~ $ unzip electron-v1.6.11-linux-x64.zip Electron
-# Go to the 'resources' directory
-user@computer:~ $ cd Electron/resources
-# Clone the repository to the 'App' sub-directory
-user@computer:~/Electron/resources $ git clone https://github.com/techedemic/WhatchaDoin.git App
-# Run the application as follows
-user@computer:~/Electron $ ./
+user@computer:~ $ tar -zxvf whatchadoin-0.0.1.tgz WhatchaDoin
+# Go to the WhatchaDoin directory
+user@computer:~ $ cd WhatchaDoin
+# Test the app
+user@computer:~/WhatchaDoin $ ./WhatchaDoin
 ```
 
-The file containing the time entries will be `/home/user/Electron/output.csv`
+The file containing the time entries will be `/home/user/WhatchaDoin/output.csv`
 If it doesn't exist at first, the app will create it.
 
 Obviously, you want this app to open up regularly, so you can use something like the `cron` to schedule recurring tasks and make the app fire every, let's say, 30 minutes or so.
 
-
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+### Example cron entry
+```bash
+# Open crontab
+crontab -e
+# Add a line as follows
+*/30 6-17 * * * export DISPLAY=:0 && /home/hendri/WhatchaDoin/WhatchaDoin > /dev/null
+```
+The above cron entry will open the app every 30 minutes between 06h00 and 17h00
+You can use  [crontab tester](https://crontab.guru/#*/30_6-17_*_*_* ) to build your own expressions
