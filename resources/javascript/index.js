@@ -1,5 +1,6 @@
 const fs = require('fs');
 const remote = require('electron').remote;
+const path = require('path');
 
 document.addEventListener('DOMContentLoaded', function(){
     // Get and display the date so the user can see when the window was opened
@@ -39,7 +40,8 @@ function saveFile(){
   var content = date + ',' + time + ',' + taskType + ',' + taskDescription + '\n';
 
   try {
-    fs.appendFileSync('output.csv',content, 'utf-8');
+    var outputFile = path.join(__dirname,'../../','output.csv');
+    fs.appendFileSync(outputFile,content, 'utf-8');
     var window = remote.getCurrentWindow();
     window.close();
   } catch (e) {
