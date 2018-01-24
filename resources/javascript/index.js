@@ -2,6 +2,8 @@ const fs = require('fs');
 const remote = require('electron').remote;
 const path = require('path');
 
+var strDateLoaded = "";
+
 document.addEventListener('DOMContentLoaded', function(){
     // Get and display the date so the user can see when the window was opened
     var today = new Date();
@@ -11,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
     var time = moment().format('h:mm:ss a')
     document.getElementById('lblDate').innerText = date;
     document.getElementById('lblTime').innerText = time;
+
+    strDateLoaded = date + "," + time;
 
     // Get a handle to the submit button
     const submitButton = document.getElementById('btnSubmit')
@@ -33,11 +37,12 @@ function saveFile(){
 
   var taskType = document.getElementById('slctTaskType').value;
   var taskDescription = document.getElementById('txtTaskDescription').value;
-  var today = new Date();
-  var date = moment().format('YYYY-MM-DD');
-  var time = moment().format('h:mm:ss a')
+  // var today = new Date();
+  // var date = moment().format('YYYY-MM-DD');
+  // var time = moment().format('h:mm:ss a')
 
-  var content = date + ',' + time + ',' + taskType + ',' + taskDescription + '\n';
+  // var content = date + ',' + time + ',' + taskType + ',' + taskDescription + '\n';
+  var content = strDateLoaded + ',' + taskType + ',' + taskDescription + '\n';
 
   try {
     var outputFile = path.join(__dirname,'../../','output.csv');
