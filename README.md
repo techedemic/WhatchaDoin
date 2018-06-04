@@ -59,10 +59,16 @@ Obviously, you want this app to open up regularly, so you can use something like
 
 ### Example cron entry
 ```bash
+# First, determine the display 'number' your X-session uses
+user@computer:~/WhatchaDoin $ echo $DISPLAY
+:1
+
+# The output is `:1` which we will use in the cron entry below
+
 # Open crontab
 crontab -e
-# Add a line as follows
-*/30 6-17 * * * export DISPLAY=:0 && /home/hendri/WhatchaDoin/WhatchaDoin > /dev/null
+# Add a line as follows / Adjust according to output of command above
+*/30 6-17 * * * export DISPLAY=:1 && /home/hendri/WhatchaDoin/WhatchaDoin > /dev/null
 ```
 The above cron entry will open the app every 30 minutes between 06h00 and 17h00
 You can use  [crontab tester](https://crontab.guru/#*/30_6-17_*_*_* ) to build your own expressions
