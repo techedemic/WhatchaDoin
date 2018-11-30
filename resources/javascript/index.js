@@ -20,36 +20,41 @@ document.addEventListener('DOMContentLoaded', function(){
     const submitButton = document.getElementById('btnSubmit')
 
     submitButton.addEventListener('click', function (event) {
-      saveFile();
+        saveFile();
     })
 
     // Add an eventlistener for the enter key.
     document.addEventListener('keypress', function(e){
-      var key = e.which || e.keyCode;
-      if (key === 13){
-        submitButton.click();
-      }
+        var key = e.which || e.keyCode;
+        if (key === 13){
+            submitButton.click();
+        }
     });
 }, false);
 
 
 function saveFile(){
 
-  var taskType = document.getElementById('slctTaskType').value;
-  var taskDescription = document.getElementById('txtTaskDescription').value;
-  // var today = new Date();
-  // var date = moment().format('YYYY-MM-DD');
-  // var time = moment().format('h:mm:ss a')
+    var taskType = document.getElementById('slctTaskType').value;
+    var taskDescription = document.getElementById('txtTaskDescription').value;
+    // var today = new Date();
+    // var date = moment().format('YYYY-MM-DD');
+    // var time = moment().format('h:mm:ss a')
 
-  // var content = date + ',' + time + ',' + taskType + ',' + taskDescription + '\n';
-  var content = strDateLoaded + ',' + taskType + ',' + taskDescription + '\n';
+    // var content = date + ',' + time + ',' + taskType + ',' + taskDescription + '\n';
+    var content = strDateLoaded + ',' + taskType + ',' + taskDescription + '\n';
 
-  try {
-    var outputFile = path.join(__dirname,'../../','output.csv');
-    fs.appendFileSync(outputFile,content, 'utf-8');
-    var window = remote.getCurrentWindow();
-    window.close();
-  } catch (e) {
-    alert('Failed to save file: ' + e);
-  }
+    try {
+        var outputFile = path.join(getUserHome(),'output.csv');
+        fs.appendFileSync(outputFile,content, 'utf-8');
+        var window = remote.getCurrentWindow();
+        window.close();
+    } catch (e) {
+        alert('Failed to save file: ' + e);
+    }
+}
+
+
+function getUserHome() {
+    return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
 }
