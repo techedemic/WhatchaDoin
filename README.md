@@ -10,7 +10,7 @@ This version is cross-platform.
 
 #### First, download the app
 
-Download the latest WINDOWS 64-BIIT release from https://github.com/techedemic/WhatchaDoin/releases .
+Download the latest WINDOWS 64-BIT release from https://github.com/techedemic/WhatchaDoin/releases .
 
 #### Next, extract
 Extract wherever you want. For this example, we will use `C:\tmp\WhatchaDoin`
@@ -20,7 +20,7 @@ After extracting the zip, navigate to `C:\tmp\WhatchaDoin`
 
 You can now manually start the app by running `C:\tmp\WhatchaDoin\WhatchaDoin.exe`
 
-The file containing the time entries will be `C:\tmp\WhatchaDoin\output.csv`
+The file containing the time entries will be `C:\users\yourname\output.csv`
 
 If it doesn't exist at first, the app will create it.
 
@@ -52,7 +52,7 @@ user@computer:~ $ cd WhatchaDoin
 user@computer:~/WhatchaDoin $ ./WhatchaDoin
 ```
 
-The file containing the time entries will be `/home/user/WhatchaDoin/output.csv`
+The file containing the time entries will be `/home/user/output.csv`
 If it doesn't exist at first, the app will create it.
 
 Obviously, you want this app to open up regularly, so you can use something like the `cron` to schedule recurring tasks and make the app fire every, let's say, 30 minutes or so.
