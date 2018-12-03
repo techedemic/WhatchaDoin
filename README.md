@@ -43,9 +43,9 @@ From your command line:
 # Go to the home directory
 user@computer:/ $ cd /home/user
 # Get Electron the latest version of the file from  (change the version if different)
-user@computer:~ $ wget https://github.com/techedemic/WhatchaDoin/releases/download/0.0.1/whatchadoin-0.0.1.tgz
+user@computer:~ $ wget https://github.com/techedemic/WhatchaDoin/releases/download/0.0.3/whatchadoin-0.0.3.tgz
 # Unzip to /home/user/Electron
-user@computer:~ $ tar -zxvf whatchadoin-0.0.1.tgz WhatchaDoin
+user@computer:~ $ tar -zxvf whatchadoin-0.0.3.tgz WhatchaDoin
 # Go to the WhatchaDoin directory
 user@computer:~ $ cd WhatchaDoin
 # Test the app
